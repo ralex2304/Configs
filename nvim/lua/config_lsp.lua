@@ -15,7 +15,7 @@ vim.keymap.set('n', '<leader>so', require('telescope.builtin').lsp_references, a
 
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
-local servers = { 'clangd'}
+local servers = { 'clangd', 'pyright' }
 for _, lsp in ipairs(servers) do
 	require('lspconfig')[lsp].setup {
 		capabilities = capabilities,

@@ -6,7 +6,7 @@ require("telescope").setup{
       -- theme = "ivy",
       -- disables netrw and use telescope-file-browser in its place
       hijack_netrw = true,
-    }
+    },
   },
   defaults = {
     mappings = {
@@ -75,8 +75,8 @@ require("telescope").setup{
     
   },
 }
-require("telescope").load_extension "file_browser"
-require("telescope").load_extension "lazygit"
+require("telescope").load_extension("file_browser")
+require("telescope").load_extension("lazygit")
 
 local builtin = require('telescope.builtin')
 vim.keymap.set('n', '<leader>ff', builtin.find_files, { desc = 'Telescope find files' })
