@@ -21,6 +21,7 @@ Plug 'johnfrankmorgan/whitespace.nvim'
 Plug 'bluz71/nvim-linefly'
 Plug 'kdheepak/lazygit.nvim'
 Plug 'mbbill/undotree'
+Plug 'lewis6991/gitsigns.nvim'
 
 vim.call('plug#end')
 
@@ -33,3 +34,4 @@ require("config_whitespace")
 require("config_undotree")
 require("config_linefly")
 require("config_hex")
+require("config_gitsigns")
