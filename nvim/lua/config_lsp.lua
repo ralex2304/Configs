@@ -27,3 +27,7 @@ require'lspconfig'.verible.setup {
     capabilities = capabilities,
     root_dir = function() return vim.uv.cwd() end
 }
+
+require('nvim-treesitter.configs').setup {
+    ensure_installed = {"c", "cpp", "python", "verilog", "latex", "markdown", "comment", "make", "lua"},
+}
