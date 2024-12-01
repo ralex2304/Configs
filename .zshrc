@@ -11,7 +11,7 @@ ZSH_THEME="lambda-vim"
 # much, much faster.
 # DISABLE_UNTRACKED_FILES_DIRTY="true"
 
-plugins=(git cmdtime zsh-autosuggestions zsh-syntax-highlighting zsh-vim-mode)
+plugins=(git zsh-autosuggestions zsh-syntax-highlighting zsh-vim-mode)
 
 source $ZSH/oh-my-zsh.sh
 
