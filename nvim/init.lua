@@ -29,6 +29,8 @@ Plug('iamcco/markdown-preview.nvim', { ['do'] = function()
     vim.fn['mkdp#util#install']()
 end, ['for'] = {'markdown', 'vim-plug'}})
 Plug('ravibrock/spellwarn.nvim')
+Plug('petertriho/nvim-scrollbar')
+Plug('kevinhwang91/nvim-hlslens')
 
 vim.call('plug#end')
 
@@ -45,3 +47,6 @@ require("config_gitsigns")
 require("config_tmux")
 require("config_tex")
 require("config_spell")
+require("config_scrollbar")
+require("config_hlslens")
+
