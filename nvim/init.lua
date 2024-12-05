@@ -31,6 +31,7 @@ end, ['for'] = {'markdown', 'vim-plug'}})
 Plug('ravibrock/spellwarn.nvim')
 Plug('petertriho/nvim-scrollbar')
 Plug('kevinhwang91/nvim-hlslens')
+Plug('ralex2304/verilog-autoinst.nvim', { ['branch'] = 'Treesitter-node-types-fix' })
 
 vim.call('plug#end')
 
@@ -49,4 +50,5 @@ require("config_tex")
 require("config_spell")
 require("config_scrollbar")
 require("config_hlslens")
+require("config_verilog_autoinst")
 
