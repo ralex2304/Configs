@@ -33,6 +33,8 @@ Plug('petertriho/nvim-scrollbar')
 Plug('kevinhwang91/nvim-hlslens')
 Plug('ralex2304/verilog-autoinst.nvim', { ['branch'] = 'Treesitter-node-types-fix' })
 Plug('mhinz/vim-startify', {['branch'] = 'center'})
+Plug('folke/trouble.nvim')
+Plug('folke/todo-comments.nvim')
 
 vim.call('plug#end')
 
@@ -53,4 +55,6 @@ require("config_spell")
 require("config_scrollbar")
 require("config_hlslens")
 require("config_verilog_autoinst")
+require("config_trouble")
+require("config_todo")
 
