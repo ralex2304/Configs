@@ -35,6 +35,7 @@ Plug('ralex2304/verilog-autoinst.nvim', { ['branch'] = 'Treesitter-node-types-fi
 Plug('mhinz/vim-startify', {['branch'] = 'center'})
 Plug('folke/trouble.nvim')
 Plug('folke/todo-comments.nvim')
+Plug('sindrets/diffview.nvim')
 
 vim.call('plug#end')
 
@@ -57,4 +58,4 @@ require("config_hlslens")
 require("config_verilog_autoinst")
 require("config_trouble")
 require("config_todo")
-
+require("config_diffview")
