@@ -1,6 +1,6 @@
 if [ "$TMUX" = "" ]; then tmux; fi
 
-export PATH=$PATH:/home/ralex/.local/bin
+export PATH=$PATH:/home/ralex/.local/bin:/home/ralex/.cargo/bin
 
 export ZSH="$HOME/.oh-my-zsh"
 
