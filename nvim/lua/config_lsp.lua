@@ -15,7 +15,7 @@ vim.keymap.set('n', '<leader>so', require('telescope.builtin').lsp_references, a
 
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
-local servers = { 'clangd', 'pyright', 'asm_lsp' }
+local servers = { 'clangd', 'pyright', 'asm_lsp', 'cmake'}
 for _, lsp in ipairs(servers) do
 	require('lspconfig')[lsp].setup {
 		capabilities = capabilities,
@@ -35,9 +35,12 @@ require('lspconfig').veridian.setup {
 vim.filetype.add({
     extension = {
         nasm = 'asm',
-    }
+    },
+    filename = {
+        ['CMakeLists.txt'] = 'cmake',
+    },
 })
 
 require('nvim-treesitter.configs').setup {
-    ensure_installed = {"c", "cpp", "python", "verilog", "latex", "markdown", "comment", "make", "lua", "nasm"},
+    ensure_installed = {"c", "cpp", "python", "verilog", "latex", "markdown", "comment", "make", "cmake", "lua", "nasm"},
 }
