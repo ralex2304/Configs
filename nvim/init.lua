@@ -37,6 +37,7 @@ Plug('mhinz/vim-startify', {['branch'] = 'center'})
 Plug('folke/trouble.nvim')
 Plug('folke/todo-comments.nvim')
 Plug('sindrets/diffview.nvim')
+Plug('tikhomirov/vim-glsl')
 
 vim.call('plug#end')
 
