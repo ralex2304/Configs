@@ -1,6 +1,6 @@
 # lambda-vim theme
 
-PROMPT='%{$fg[green]%}╭─$(_user_host)%{$reset_color%} in $(_current_dir) $(_git_prompt_info)
+PROMPT='%{$fg[green]%}╭─$(_user_host)%{$reset_color%}$(virtualenv_prompt_info) in $(_current_dir) $(_git_prompt_info)
 %{$fg[green]%}╰─%{$resetcolor%}%{${fg[$CARETCOLOR]}%}λ%{$resetcolor%} '
 
 PROMPT2='%{${fg[$CARETCOLOR]}%}λ%{$resetcolor%} '
@@ -59,6 +59,9 @@ ZSH_THEME_GIT_PROMPT_DELETED="%{$fg[red]%}✖ "
 ZSH_THEME_GIT_PROMPT_RENAMED="%{$fg[blue]%}▴ "
 ZSH_THEME_GIT_PROMPT_UNMERGED="%{$fg[cyan]%}§ "
 ZSH_THEME_GIT_PROMPT_UNTRACKED="%{$fg[white]%}◒ "
+
+ZSH_THEME_VIRTUALENV_PREFIX=%{${fg[yellow]}%}[
+ZSH_THEME_VIRTUALENV_SUFFIX=]%{$reset_color%}
 
 # cmdtime - https://github.com/tom-auger/cmdtime - Copyright (c) 2021 Tom Auger
 

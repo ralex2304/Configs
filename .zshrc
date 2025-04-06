@@ -31,7 +31,7 @@ export FZF_DEFAULT_COMMAND='ag --hidden -g ""'
 # much, much faster.
 # DISABLE_UNTRACKED_FILES_DIRTY="true"
 
-plugins=(git fzf zsh-autosuggestions zsh-syntax-highlighting zsh-vim-mode)
+plugins=(git fzf zsh-autosuggestions zsh-syntax-highlighting zsh-vim-mode virtualenv)
 
 source $ZSH/oh-my-zsh.sh
 
