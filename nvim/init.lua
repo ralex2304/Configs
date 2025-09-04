@@ -38,6 +38,7 @@ Plug('folke/trouble.nvim')
 Plug('folke/todo-comments.nvim')
 Plug('sindrets/diffview.nvim')
 Plug('tikhomirov/vim-glsl')
+Plug('kiyoon/jupynium.nvim', { ['do'] = 'pip3 install --user .' })
 
 vim.call('plug#end')
 

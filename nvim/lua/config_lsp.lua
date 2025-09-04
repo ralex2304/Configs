@@ -46,3 +46,6 @@ vim.filetype.add({
 require('nvim-treesitter.configs').setup {
     ensure_installed = {"c", "cpp", "python", "verilog", "latex", "markdown", "comment", "make", "cmake", "lua", "nasm"},
 }
+
+require("jupynium").setup({})
+
