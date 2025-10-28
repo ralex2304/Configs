@@ -8,7 +8,7 @@ require("scrollbar").setup({
         Cursor    = { color = colors.white,     text = "<" },
         Search    = { color = colors.orange },
         Error     = { color = colors.red },
-        Warn      = { color = colors.orange },
+        Warn      = { color = colors.yellow },
         Info      = { color = colors.malibu },
         Hint      = { color = colors.turquoise },
         Misc      = { color = colors.green },
@@ -18,3 +18,4 @@ require("scrollbar").setup({
 })
 
 require("scrollbar.handlers.gitsigns").setup()
+

@@ -35,6 +35,7 @@ require('lspconfig').veridian.setup {
 vim.filetype.add({
     extension = {
         nasm = 'asm',
+        s = 'asm',
         vs = 'glsl',
         fs = 'glsl'
     },
@@ -48,4 +49,7 @@ require('nvim-treesitter.configs').setup {
 }
 
 require("jupynium").setup({})
+
+vim.keymap.set('n', '<leader>ja', '<cmd>JupyniumStartAndAttachToServer<CR>')
+vim.keymap.set('n', '<leader>jy', '<cmd>JupyniumStartSync<CR>')
 

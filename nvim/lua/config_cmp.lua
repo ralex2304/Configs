@@ -55,7 +55,8 @@ cmp.setup({
     -- { name = 'luasnip' }, -- For luasnip users.
     -- { name = 'ultisnips' }, -- For ultisnips users.
     -- { name = 'snippy' }, -- For snippy users.
-    { name = 'latex_symbols'},  
+    { name = 'latex_symbols'},
+    { name = 'jupynium'},
 }, {
     { name = 'buffer' },
   })
