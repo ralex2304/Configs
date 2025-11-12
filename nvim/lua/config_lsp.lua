@@ -17,20 +17,20 @@ local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
 local servers = { 'clangd', 'pyright', 'asm_lsp', 'cmake', 'glsl_analyzer'}
 for _, lsp in ipairs(servers) do
-	require('lspconfig')[lsp].setup {
+	vim.lsp.config(lsp, {
 		capabilities = capabilities,
-	}
+	})
 end
 
 local lspconfutil = require 'lspconfig/util'
 local root_pattern = lspconfutil.root_pattern("veridian.yml", ".git")
-require('lspconfig').veridian.setup {
+vim.lsp.config("veridian", {
     cmd = { 'veridian' },
     root_dir = function(fname)
         local filename = fname:match '^/' and fname or lspconfutil.path.join(vim.loop.cwd(), fname)
         return root_pattern(filename) or lspconfutil.path.dirname(filename)
     end;
-}
+})
 
 vim.filetype.add({
     extension = {
