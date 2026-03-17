@@ -1,10 +1,10 @@
 local attach_opts = { silent = true, buffer = bufnr }
 vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, attach_opts)
 vim.keymap.set('n', 'gd', vim.lsp.buf.definition, attach_opts)
-vim.keymap.set('n', 'K', vim.lsp.buf.hover, attach_opts)
+vim.keymap.set('n', 'K', function() vim.lsp.buf.hover({ border = 'single' }) end, attach_opts)
 vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, attach_opts)
 vim.keymap.set('n', 'gl', vim.diagnostic.open_float, attach_opts)
-vim.keymap.set('n', '<C-s>', vim.lsp.buf.signature_help, attach_opts)
+vim.keymap.set('n', '<C-s>', function() vim.lsp.buf.signature_help({ border = 'single' }) end, attach_opts)
 vim.keymap.set('n', '<leader>wa', vim.lsp.buf.add_workspace_folder, attach_opts)
 vim.keymap.set('n', '<leader>wr', vim.lsp.buf.remove_workspace_folder, attach_opts)
 vim.keymap.set('n', '<leader>wl', function() print(vim.inspect(vim.lsp.buf.list_workspace_folders())) end, attach_opts)
@@ -26,14 +26,17 @@ local lspconfutil = require 'lspconfig/util'
 local root_pattern = lspconfutil.root_pattern("veridian.yml", ".git")
 vim.lsp.config("veridian", {
     cmd = { 'veridian' },
-    root_dir = function(fname)
+    root_dir = function(bufnr, on_dir)
+        local fname = vim.api.nvim_buf_get_name(bufnr)
         local filename = fname:match '^/' and fname or lspconfutil.path.join(vim.loop.cwd(), fname)
-        return root_pattern(filename) or lspconfutil.path.dirname(filename)
+        on_dir(root_pattern(filename) or lspconfutil.path.dirname(filename))
     end;
 })
 
 vim.filetype.add({
     extension = {
+        v = 'verilog',
+        vh = 'verilog',
         nasm = 'asm',
         s = 'asm',
         vs = 'glsl',
