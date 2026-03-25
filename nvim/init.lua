@@ -39,6 +39,7 @@ Plug('folke/todo-comments.nvim')
 Plug('sindrets/diffview.nvim')
 Plug('tikhomirov/vim-glsl')
 Plug('kiyoon/jupynium.nvim', { ['do'] = 'pip3 install --user .' })
+Plug('hudson-trading/slang-server.nvim')
 
 vim.call('plug#end')
 

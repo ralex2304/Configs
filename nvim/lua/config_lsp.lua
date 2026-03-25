@@ -22,16 +22,15 @@ for _, lsp in ipairs(servers) do
 	})
 end
 
-local lspconfutil = require 'lspconfig/util'
-local root_pattern = lspconfutil.root_pattern("veridian.yml", ".git")
-vim.lsp.config("veridian", {
-    cmd = { 'veridian' },
-    root_dir = function(bufnr, on_dir)
-        local fname = vim.api.nvim_buf_get_name(bufnr)
-        local filename = fname:match '^/' and fname or lspconfutil.path.join(vim.loop.cwd(), fname)
-        on_dir(root_pattern(filename) or lspconfutil.path.dirname(filename))
-    end;
+vim.lsp.config("slang-server", {
+  cmd = { "slang-server" },
+  root_markers = { ".git", ".slang" },
+  filetypes = {
+    "systemverilog",
+    "verilog",
+  },
 })
+vim.lsp.enable("slang-server")
 
 vim.filetype.add({
     extension = {
