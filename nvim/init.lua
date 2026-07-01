@@ -1,3 +1,15 @@
+local profile = os.getenv("NVIM_PROFILE")
+if profile == nil then
+    profile = ""
+elseif profile == "work" then
+    profile = ""
+elseif profile == "all" then
+    profile = "jupyter"
+end
+function is_enabled(feature)
+    return string.find(profile, feature) ~= nil
+end
+
 local Plug = vim.fn['plug#']
 
 vim.call('plug#begin')
@@ -38,8 +50,12 @@ Plug('folke/trouble.nvim')
 Plug('folke/todo-comments.nvim')
 Plug('sindrets/diffview.nvim')
 Plug('tikhomirov/vim-glsl')
-Plug('kiyoon/jupynium.nvim', { ['do'] = 'pip3 install --user .' })
 Plug('hudson-trading/slang-server.nvim')
+Plug('uga-rosa/cmp-dictionary')
+
+if is_enabled("jupyter") then
+    Plug('kiyoon/jupynium.nvim', { ['do'] = 'pip3 install --user .' })
+end
 
 vim.call('plug#end')
 

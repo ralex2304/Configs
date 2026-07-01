@@ -56,7 +56,7 @@ cmp.setup({
     -- { name = 'ultisnips' }, -- For ultisnips users.
     -- { name = 'snippy' }, -- For snippy users.
     { name = 'latex_symbols'},
-    { name = 'jupynium'},
+    is_enabled("jupyter") and { name = 'jupynium'} or nil,
 }, {
     { name = 'buffer' },
   })

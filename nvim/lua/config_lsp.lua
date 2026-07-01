@@ -50,8 +50,10 @@ require('nvim-treesitter').install {
     "c", "cpp", "python", "verilog", "latex", "markdown", "comment", "make", "cmake", "lua", "nasm",
 }
 
-require("jupynium").setup({})
+if is_enabled("jupyter") then
+    require("jupynium").setup({})
 
-vim.keymap.set('n', '<leader>ja', '<cmd>JupyniumStartAndAttachToServer<CR>')
-vim.keymap.set('n', '<leader>jy', '<cmd>JupyniumStartSync<CR>')
+    vim.keymap.set('n', '<leader>ja', '<cmd>JupyniumStartAndAttachToServer<CR>')
+    vim.keymap.set('n', '<leader>jy', '<cmd>JupyniumStartSync<CR>')
+end
 
