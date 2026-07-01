@@ -22,6 +22,7 @@ for _, lsp in ipairs(servers) do
 	vim.lsp.config(lsp, {
 		capabilities = capabilities,
 	})
+    vim.lsp.enable(lsp)
 end
 
 vim.lsp.config("slang-server", {
