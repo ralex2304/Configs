@@ -12,6 +12,8 @@ vim.keymap.set('n', '<leader>D', vim.lsp.buf.type_definition, attach_opts)
 vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, attach_opts)
 vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, attach_opts)
 vim.keymap.set('n', '<leader>so', require('telescope.builtin').lsp_references, attach_opts)
+vim.keymap.set("n", "]g", vim.diagnostic.goto_next)
+vim.keymap.set("n", "[g", vim.diagnostic.goto_prev)
 
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
@@ -24,7 +26,7 @@ end
 
 vim.lsp.config("slang-server", {
   cmd = { "slang-server" },
-  root_markers = { ".git", ".slang" },
+  root_markers = { ".slang", ".git" },
   filetypes = {
     "systemverilog",
     "verilog",
@@ -47,7 +49,7 @@ vim.filetype.add({
 })
 
 require('nvim-treesitter').install {
-    "c", "cpp", "python", "verilog", "latex", "markdown", "comment", "make", "cmake", "lua", "nasm",
+    "c", "cpp", "python", "systemverilog", "latex", "markdown", "comment", "make", "cmake", "lua", "nasm",
 }
 
 if is_enabled("jupyter") then

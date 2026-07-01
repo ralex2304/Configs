@@ -51,6 +51,7 @@ cmp.setup({
   }),
   sources = cmp.config.sources({
     { name = 'nvim_lsp' },
+    { name = 'dictionary', keyword_lenght = 2 },
     { name = 'vsnip' }, -- For vsnip users.
     -- { name = 'luasnip' }, -- For luasnip users.
     -- { name = 'ultisnips' }, -- For ultisnips users.
@@ -90,5 +91,30 @@ cmp.setup.cmdline(':', {
     { name = 'cmdline' }
   }),
   matching = { disallow_symbol_nonprefix_matching = false }
+})
+
+local dict = {
+  ["*"] = {},
+  ft = {
+    verilog = { "~/.config/nvim/dictionaries/verilog.txt" },
+    systemverilog = { "~/.config/nvim/dictionaries/verilog.txt" },
+  },
+}
+
+require("cmp_dictionary").setup({
+  paths = dict["*"],
+  exact_length = 2,
+  first_case_insensitive = false,
+})
+
+vim.api.nvim_create_autocmd("BufEnter", {
+  pattern = "*",
+  callback = function(ev)
+    local paths = dict.ft[vim.bo.filetype] or {}
+    vim.list_extend(paths, dict["*"])
+    require("cmp_dictionary").setup({
+      paths = paths,
+    })
+  end
 })
 
