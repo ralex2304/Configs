@@ -60,6 +60,7 @@ end
 vim.call('plug#end')
 
 require("config")
+require("config_clipboard")
 require("config_lsp")
 require("config_telescope")
 require("config_cmp")
